@@ -1,0 +1,58 @@
+-- ATUALIZACAO REFORMA TRIBUTARIA (IBS/CBS/IS) 
+-- ARQUIVO: 000000267.TXT
+
+-- ============================================================================
+-- 1. TABELA DE ITENS (NFEITE)
+-- ============================================================================
+
+-- Classificacao Tributaria (Texto = NULL quando vazio)
+ALTER TABLE NFEITE ADD CCLASS_TRIB VARCHAR2(6)
+$
+
+-- GRUPO IBS (Imposto sobre Bens e Servicos)
+ALTER TABLE NFEITE ADD CST_IBS VARCHAR2(3)
+$
+ALTER TABLE NFEITE ADD VBC_IBS NUMBER(15,2) DEFAULT 0
+$
+ALTER TABLE NFEITE ADD P_IBS NUMBER(7,4) DEFAULT 0
+$
+ALTER TABLE NFEITE ADD V_IBS NUMBER(15,2) DEFAULT 0
+$
+
+-- GRUPO CBS (Contribuicao sobre Bens e Servicos)
+ALTER TABLE NFEITE ADD CST_CBS VARCHAR2(3)
+$
+ALTER TABLE NFEITE ADD VBC_CBS NUMBER(15,2) DEFAULT 0
+$
+ALTER TABLE NFEITE ADD P_CBS NUMBER(7,4) DEFAULT 0
+$
+ALTER TABLE NFEITE ADD V_CBS NUMBER(15,2) DEFAULT 0
+$
+
+-- GRUPO IS (Imposto Seletivo)
+ALTER TABLE NFEITE ADD CST_IS VARCHAR2(3)
+$
+ALTER TABLE NFEITE ADD VBC_IS NUMBER(15,2) DEFAULT 0
+$
+ALTER TABLE NFEITE ADD P_IS NUMBER(7,4) DEFAULT 0
+$
+ALTER TABLE NFEITE ADD V_IS NUMBER(15,2) DEFAULT 0
+$
+
+-- ============================================================================
+-- 2. TABELA DE CABECALHO (NFECAB)
+-- ============================================================================
+
+-- Totais do Rodape (Sempre 0 para nao quebrar somas)
+ALTER TABLE NFECAB ADD V_TOT_IBS NUMBER(15,2) DEFAULT 0
+$
+ALTER TABLE NFECAB ADD V_TOT_CBS NUMBER(15,2) DEFAULT 0
+$
+ALTER TABLE NFECAB ADD V_TOT_IS NUMBER(15,2) DEFAULT 0
+$
+
+-- ============================================================================
+-- 3. FINALIZACAO
+-- ============================================================================
+COMMIT
+$

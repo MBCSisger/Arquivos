@@ -1,0 +1,20 @@
+INSERT INTO MENU
+(
+CODSIS,
+CODIGO,
+DESCRICAO,
+I1,
+I2,
+I3,
+I4
+)
+VALUES
+(
+1,
+302,
+'3.2 -REL CLIENTES',
+'03',
+'02',
+'',
+''
+)

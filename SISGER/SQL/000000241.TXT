@@ -1,0 +1,6 @@
+UPDATE EMAIL SET
+EHOST = 'smtp.gmail.com',
+EPORT = '465',
+EUSER = 'mb.cavalcanti1@gmail.com',
+EPASS = 'jqzl mmcs wkgd ynos',
+ESSL   = '1'

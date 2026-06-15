@@ -1,0 +1,135 @@
+-- ATUALIZACAO TRIGGER REFORMA TRIBUTARIA (IBS/CBS/IS)
+-- ARQUIVO: 000000268.TXT
+
+CREATE OR REPLACE TRIGGER NFEITE_T1 
+AFTER INSERT OR DELETE OR UPDATE ON NFEITE
+FOR EACH ROW 
+BEGIN
+   -- ==========================================================
+   -- BLOCO DE INSERÇÃO
+   -- ==========================================================
+   IF INSERTING THEN
+      UPDATE NFECAB SET
+      TOTAL_vBC          = TOTAL_vBC          + :NEW.ICMS_vBC,
+      TOTAL_vICMS        = TOTAL_vICMS        + :NEW.ICMS_vICMS,
+      TOTAL_vBCST        = TOTAL_vBCST        + :NEW.ICMS_vBCST,
+      TOTAL_vST          = TOTAL_vST          + :NEW.ICMS_PICMSST,
+      TOTAL_vProd        = TOTAL_vProd        + ROUND(:NEW.vUNCOM * :NEW.QCOM, 2),
+      TOTAL_vFrete       = TOTAL_vFrete       + :NEW.VFRETE,
+      TOTAL_vSeg         = TOTAL_vSeg         + :NEW.vSEG,
+      TOTAL_vDesc        = TOTAL_vDesc        + :NEW.vDESC,
+      TOTAL_vII          = TOTAL_vII          + :NEW.II_vII,
+      TOTAL_vIPI         = TOTAL_vIPI         + :NEW.IPI_VIPI,
+      TOTAL_vPIS         = TOTAL_vPIS         + :NEW.PIS_VPIS,
+      TOTAL_vCOFINS      = TOTAL_vCOFINS      + :NEW.COFINS_VCOFINS,
+      TOTAL_vOutro       = TOTAL_vOutro       + :NEW.VOUTRO,
+      TOTAL_vFCPUFDest   = TOTAL_vFCPUFDest   + :NEW.ICMS_vFCPUFDest,
+      TOTAL_vICMSUFDest  = TOTAL_vICMSUFDest  + :NEW.ICMS_vICMSUFDest,
+      TOTAL_vICMSUFRemet = TOTAL_vICMSUFRemet + :NEW.ICMS_vICMSUFRemet,
+      TOTAL_vIPIDevol    = TOTAL_vIPIDevol    + :NEW.vIPIDevol,
+      
+      -- Novos campos da Reforma Tributária
+      V_TOT_IBS          = V_TOT_IBS          + :NEW.V_IBS,
+      V_TOT_CBS          = V_TOT_CBS          + :NEW.V_CBS,
+      V_TOT_IS           = V_TOT_IS           + :NEW.V_IS,
+      
+      TOTAL_vNF          = TOTAL_vNF          + ROUND(((:NEW.vUNCOM * :NEW.QCOM)+:NEW.vFRETE+:NEW.vSEG+:NEW.vOUTRO+:NEW.vIPIDevol)-:NEW.VDESC, 2)
+      WHERE CHAVE = :NEW.CHAVE;
+   END IF;
+
+   -- ==========================================================
+   -- BLOCO DE ATUALIZAÇÃO
+   -- ==========================================================
+   IF UPDATING THEN
+      -- 1. Remove os valores antigos (:OLD)
+      UPDATE NFECAB SET
+      TOTAL_vBC          = TOTAL_vBC          - :OLD.ICMS_vBC,
+      TOTAL_vICMS        = TOTAL_vICMS        - :OLD.ICMS_vICMS,
+      TOTAL_vBCST        = TOTAL_vBCST        - :OLD.ICMS_vBCST,
+      TOTAL_vST          = TOTAL_vST          - :OLD.ICMS_PICMSST,
+      TOTAL_vProd        = TOTAL_vProd        - ROUND(:OLD.vUNCOM * :OLD.QCOM, 2),
+      TOTAL_vFrete       = TOTAL_vFrete       - :OLD.VFRETE,
+      TOTAL_vSeg         = TOTAL_vSeg         - :OLD.vSEG,
+      TOTAL_vDesc        = TOTAL_vDesc        - :OLD.vDESC,
+      TOTAL_vII          = TOTAL_vII          - :OLD.II_vII,
+      TOTAL_vIPI         = TOTAL_vIPI         - :OLD.IPI_VIPI,
+      TOTAL_vPIS         = TOTAL_vPIS         - :OLD.PIS_VPIS,
+      TOTAL_vCOFINS      = TOTAL_vCOFINS      - :OLD.COFINS_VCOFINS,
+      TOTAL_vOutro       = TOTAL_vOutro       - :OLD.VOUTRO,
+      TOTAL_vFCPUFDest   = TOTAL_vFCPUFDest   - :OLD.ICMS_vFCPUFDest,
+      TOTAL_vICMSUFDest  = TOTAL_vICMSUFDest  - :OLD.ICMS_vICMSUFDest,
+      TOTAL_vICMSUFRemet = TOTAL_vICMSUFRemet - :OLD.ICMS_vICMSUFRemet,
+      TOTAL_vIPIDevol    = TOTAL_vIPIDevol    - :OLD.vIPIDevol,
+
+      -- Remove os valores antigos da Reforma
+      V_TOT_IBS          = V_TOT_IBS          - :OLD.V_IBS,
+      V_TOT_CBS          = V_TOT_CBS          - :OLD.V_CBS,
+      V_TOT_IS           = V_TOT_IS           - :OLD.V_IS,
+
+      TOTAL_vNF          = TOTAL_vNF          - ROUND(((:OLD.vUNCOM * :OLD.QCOM)+:OLD.vFRETE+:OLD.vSEG+:OLD.vOUTRO+:OLD.vIPIDevol)-:OLD.VDESC, 2)
+      WHERE CHAVE = :OLD.CHAVE;
+
+      -- 2. Adiciona os valores novos (:NEW)
+      UPDATE NFECAB SET
+      TOTAL_vBC          = TOTAL_vBC          + :NEW.ICMS_vBC,
+      TOTAL_vICMS        = TOTAL_vICMS        + :NEW.ICMS_vICMS,
+      TOTAL_vBCST        = TOTAL_vBCST        + :NEW.ICMS_vBCST,
+      TOTAL_vST          = TOTAL_vST          + :NEW.ICMS_PICMSST,
+      TOTAL_vProd        = TOTAL_vProd        + ROUND(:NEW.vUNCOM * :NEW.QCOM, 2),
+      TOTAL_vFrete       = TOTAL_vFrete       + :NEW.VFRETE,
+      TOTAL_vSeg         = TOTAL_vSeg         + :NEW.vSEG,
+      TOTAL_vDesc        = TOTAL_vDesc        + :NEW.vDESC,
+      TOTAL_vII          = TOTAL_vII          + :NEW.II_vII,
+      TOTAL_vIPI         = TOTAL_vIPI         + :NEW.IPI_VIPI,
+      TOTAL_vPIS         = TOTAL_vPIS         + :NEW.PIS_VPIS,
+      TOTAL_vCOFINS      = TOTAL_vCOFINS      + :NEW.COFINS_VCOFINS,
+      TOTAL_vOutro       = TOTAL_vOutro       + :NEW.VOUTRO,
+      TOTAL_vFCPUFDest   = TOTAL_vFCPUFDest   + :NEW.ICMS_vFCPUFDest,
+      TOTAL_vICMSUFDest  = TOTAL_vICMSUFDest  + :NEW.ICMS_vICMSUFDest,
+      TOTAL_vICMSUFRemet = TOTAL_vICMSUFRemet + :NEW.ICMS_vICMSUFRemet,
+      TOTAL_vIPIDevol    = TOTAL_vIPIDevol    + :NEW.vIPIDevol,
+
+      -- Adiciona os novos valores da Reforma
+      V_TOT_IBS          = V_TOT_IBS          + :NEW.V_IBS,
+      V_TOT_CBS          = V_TOT_CBS          + :NEW.V_CBS,
+      V_TOT_IS           = V_TOT_IS           + :NEW.V_IS,
+
+      TOTAL_vNF          = TOTAL_vNF          + ROUND(((:NEW.vUNCOM * :NEW.QCOM)+:NEW.vFRETE+:NEW.vSEG+:NEW.vOUTRO+:NEW.vIPIDevol)-:NEW.VDESC, 2)
+      WHERE CHAVE = :NEW.CHAVE;
+   END IF;
+
+   -- ==========================================================
+   -- BLOCO DE EXCLUSÃO
+   -- ==========================================================
+   IF DELETING THEN 
+      UPDATE NFECAB SET
+      TOTAL_vBC          = TOTAL_vBC          - :OLD.ICMS_vBC,
+      TOTAL_vICMS        = TOTAL_vICMS        - :OLD.ICMS_vICMS,
+      TOTAL_vBCST        = TOTAL_vBCST        - :OLD.ICMS_vBCST,
+      TOTAL_vST          = TOTAL_vST          - :OLD.ICMS_PICMSST,
+      TOTAL_vProd        = TOTAL_vProd        - ROUND(:OLD.vUNCOM * :OLD.QCOM, 2),
+      TOTAL_vFrete       = TOTAL_vFrete       - :OLD.VFRETE,
+      TOTAL_vSeg         = TOTAL_vSeg         - :OLD.vSEG,
+      TOTAL_vDesc        = TOTAL_vDesc        - :OLD.vDESC,
+      TOTAL_vII          = TOTAL_vII          - :OLD.II_vII,
+      TOTAL_vIPI         = TOTAL_vIPI         - :OLD.IPI_VIPI,
+      TOTAL_vPIS         = TOTAL_vPIS         - :OLD.PIS_VPIS,
+      TOTAL_vCOFINS      = TOTAL_vCOFINS      - :OLD.COFINS_VCOFINS,
+      TOTAL_vOutro       = TOTAL_vOutro       - :OLD.VOUTRO,
+      TOTAL_vFCPUFDest   = TOTAL_vFCPUFDest   - :OLD.ICMS_vFCPUFDest,
+      TOTAL_vICMSUFDest  = TOTAL_vICMSUFDest  - :OLD.ICMS_vICMSUFDest,
+      TOTAL_vICMSUFRemet = TOTAL_vICMSUFRemet - :OLD.ICMS_vICMSUFRemet,
+      TOTAL_vIPIDevol    = TOTAL_vIPIDevol    - :OLD.vIPIDevol,
+
+      -- Remove os valores antigos da Reforma
+      V_TOT_IBS          = V_TOT_IBS          - :OLD.V_IBS,
+      V_TOT_CBS          = V_TOT_CBS          - :OLD.V_CBS,
+      V_TOT_IS           = V_TOT_IS           - :OLD.V_IS,
+
+      TOTAL_vNF          = TOTAL_vNF          - ROUND(((:OLD.vUNCOM * :OLD.QCOM)+:OLD.vFRETE+:OLD.vSEG+:OLD.vOUTRO+:OLD.vIPIDevol)-:OLD.VDESC, 2)
+      WHERE CHAVE = :OLD.CHAVE;
+   END IF;
+END NFEITE_T1;
+$
+ALTER TRIGGER NFEITE_T1 ENABLE
+$

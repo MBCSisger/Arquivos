@@ -1,0 +1,16 @@
+ALTER TABLE CONFIG_NF ADD (
+
+  -- 0=Instalado no Windows (Usa Série), 1=Arquivo PFX (Usa Caminho)
+  CERT_TIPO      NUMBER(1) DEFAULT 0, 
+  
+  -- Para quando for Tipo 0 (Instalado)
+  CERT_SERIE     VARCHAR2(100),       
+  
+  -- Para quando for Tipo 1 (Arquivo)
+  CERT_CAMINHO   VARCHAR2(255),       
+  
+  -- Obrigatório para arquivo, opcional para Windows
+  CERT_SENHA     VARCHAR2(50)         
+)
+$
+

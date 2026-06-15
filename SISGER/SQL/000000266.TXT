@@ -1,0 +1,26 @@
+CREATE OR REPLACE TRIGGER ORCAMENTO_T2
+AFTER UPDATE OF FLAG1 ON ORCAMENTO
+FOR EACH ROW
+BEGIN
+  -- 1. SEGURANÇA: Só executa se o FLAG1 realmente mudou
+  IF NVL(:OLD.FLAG1, '.') <> NVL(:NEW.FLAG1, '.') THEN
+
+      -- CASO A: Virou Venda (Mudou PARA '*')
+      -- Ação: Baixa o Estoque
+      IF :NEW.FLAG1 = '*' THEN
+         UPDATE PRODUTO SET 
+            S_VENDA  = NVL(S_VENDA, 0)  + :NEW.QT,
+            QT_SALDO = NVL(QT_SALDO, 0) - :NEW.QT
+         WHERE CODIGO = :NEW.CODIGO;
+
+      -- CASO B: Cancelou Venda (Era '*' e mudou para OUTRA COISA)
+      -- Ação: Devolve o Estoque
+      ELSIF :OLD.FLAG1 = '*' THEN
+         UPDATE PRODUTO SET 
+            S_VENDA  = NVL(S_VENDA, 0)  - :OLD.QT,
+            QT_SALDO = NVL(QT_SALDO, 0) + :OLD.QT
+         WHERE CODIGO = :OLD.CODIGO;
+      END IF;
+
+  END IF;
+END;
