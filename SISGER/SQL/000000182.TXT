@@ -1,0 +1,20 @@
+INSERT INTO MENU
+(
+CODSIS,
+CODIGO,
+DESCRICAO,
+I1,
+I2,
+I3,
+I4
+)
+VALUES
+(
+1,
+113,
+'1.13 -SETOR',
+'01',
+'13',
+'',
+''
+)

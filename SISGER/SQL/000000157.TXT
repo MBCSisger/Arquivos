@@ -1,0 +1,8 @@
+create or replace TRIGGER CEP_T1 
+BEFORE
+insert on CEP
+for each row
+begin
+select CEP_SEQ.nextval into :NEW.SEQ from dual; 
+end;
+

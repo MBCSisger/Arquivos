@@ -1,0 +1,1 @@
+UPDATE SISTEMA SET DANFE_SISTEMA = 'SisGer - Dual Sete Sistemas e Tecnologia Ltda - (18)99791-0503'
