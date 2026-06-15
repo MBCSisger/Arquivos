@@ -1,0 +1,20 @@
+INSERT INTO MENU
+(
+CODSIS,
+CODIGO,
+DESCRICAO,
+I1,
+I2,
+I3,
+I4
+)
+VALUES
+(
+1,
+404,
+'4.4 -PONTO-MARCAR PONTO',
+'04',
+'04',
+'',
+''
+)

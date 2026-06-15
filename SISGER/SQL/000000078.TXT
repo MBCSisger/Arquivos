@@ -1,0 +1,7 @@
+CREATE TABLE "CLIFONE"  
+  (   "CODIGO" NUMBER(*) DEFAULT 0, 
+      "FONE"   VARCHAR2(12),
+      "DDD"    NUMBER(3),
+      "TIPO"   VARCHAR2(3)
+  )
+

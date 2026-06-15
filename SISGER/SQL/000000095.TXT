@@ -1,0 +1,50 @@
+create or replace
+TRIGGER "SISGER".NFEITE_T1 
+AFTER INSERT OR DELETE ON NFEITE
+FOR EACH ROW 
+BEGIN
+   IF INSERTING THEN
+      UPDATE NFECAB SET
+      TOTAL_vBC          = TOTAL_vBC          + :NEW.ICMS_vBC,
+      TOTAL_vICMS        = TOTAL_vICMS        + :NEW.ICMS_vICMS,
+      TOTAL_vBCST        = TOTAL_vBCST        + :NEW.ICMS_vBCST,
+      TOTAL_vST          = TOTAL_vST          + :NEW.ICMS_PICMSST,
+      TOTAL_vProd        = TOTAL_vProd        + (:NEW.vUNCOM * :NEW.QCOM),
+      TOTAL_vFrete       = TOTAL_vFrete       + :NEW.VFRETE,
+      TOTAL_vSeg         = TOTAL_vSeg         + :NEW.vSEG,
+      TOTAL_vDesc        = TOTAL_vDesc        + :NEW.vDESC,
+      TOTAL_vII          = TOTAL_vII          + :NEW.II_vII,
+      TOTAL_vIPI         = TOTAL_vIPI         + :NEW.IPI_VIPI,
+      TOTAL_vPIS         = TOTAL_vPIS         + :NEW.PIS_VPIS,
+      TOTAL_vCOFINS      = TOTAL_vCOFINS      + :NEW.COFINS_VCOFINS,
+      TOTAL_vOutro       = TOTAL_vOutro       + :NEW.VOUTRO,
+      TOTAL_vFCPUFDest   = TOTAL_vFCPUFDest   + :NEW.ICMS_vFCPUFDest,
+      TOTAL_vICMSUFDest  = TOTAL_vICMSUFDest  + :NEW.ICMS_vICMSUFDest,
+      TOTAL_vICMSUFRemet = TOTAL_vICMSUFRemet + :NEW.ICMS_vICMSUFRemet,
+      TOTAL_vIPIDevol    = TOTAL_vIPIDevol     + :NEW.vIPIDevol,
+      TOTAL_vNF     = TOTAL_vNF     + (((:NEW.vUNCOM * :NEW.QCOM)+:NEW.vFRETE+:NEW.vSEG+:NEW.vOUTRO+:NEW.vIPIDevol)-:NEW.VDESC)
+      WHERE CHAVE = :NEW.CHAVE;
+   END IF;
+   IF DELETING THEN 
+      UPDATE NFECAB SET
+      TOTAL_vBC          = TOTAL_vBC          - :OLD.ICMS_vBC,
+      TOTAL_vICMS        = TOTAL_vICMS        - :OLD.ICMS_vICMS,
+      TOTAL_vBCST        = TOTAL_vBCST        - :OLD.ICMS_vBCST,
+      TOTAL_vST          = TOTAL_vST          - :OLD.ICMS_PICMSST,
+      TOTAL_vProd        = TOTAL_vProd        - (:OLD.vUNCOM * :OLD.QCOM),
+      TOTAL_vFrete       = TOTAL_vFrete       - :OLD.VFRETE,
+      TOTAL_vSeg         = TOTAL_vSeg         - :OLD.vSEG,
+      TOTAL_vDesc        = TOTAL_vDesc        - :OLD.vDESC,
+      TOTAL_vII          = TOTAL_vII          - :OLD.II_vII,
+      TOTAL_vIPI         = TOTAL_vIPI         - :OLD.IPI_VIPI,
+      TOTAL_vPIS         = TOTAL_vPIS         - :OLD.PIS_VPIS,
+      TOTAL_vCOFINS      = TOTAL_vCOFINS      - :OLD.COFINS_VCOFINS,
+      TOTAL_vOutro       = TOTAL_vOutro       - :OLD.VOUTRO,
+      TOTAL_vFCPUFDest   = TOTAL_vFCPUFDest   - :OLD.ICMS_vFCPUFDest,
+      TOTAL_vICMSUFDest  = TOTAL_vICMSUFDest  - :OLD.ICMS_vICMSUFDest,
+      TOTAL_vICMSUFRemet = TOTAL_vICMSUFRemet - :OLD.ICMS_vICMSUFRemet,
+      TOTAL_vIPIDevol    = TOTAL_vIPIDevol     - :NEW.vIPIDevol,
+      TOTAL_vNF     = TOTAL_vNF     - (((:NEW.vUNCOM * :NEW.QCOM)+:NEW.vFRETE+:NEW.vSEG+:NEW.vOUTRO+:NEW.vIPIDevol)-:NEW.VDESC)
+      WHERE CHAVE = :OLD.CHAVE;
+   END IF;
+END NFEITE_T1;
