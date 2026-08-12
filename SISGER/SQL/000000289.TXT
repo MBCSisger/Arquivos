@@ -1,0 +1,2 @@
+UPDATE SISTEMA SET DANFE_SISTEMA = 'Sisger Automacao Comercial - (18)99791-0503'
+$
