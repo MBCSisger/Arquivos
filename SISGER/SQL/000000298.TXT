@@ -1,0 +1,2076 @@
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '000001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='00', NOME_REGRA='Situações tributadas integralmente pelo IBS e CBS.',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '000001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('000001','00','Situações tributadas integralmente pelo IBS e CBS.',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '000002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='00', NOME_REGRA='Exploração de via',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '000002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('000002','00','Exploração de via',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '000003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='00', NOME_REGRA='Regime automotivo - projetos incentivados (art. 311)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '000003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('000003','00','Regime automotivo - projetos incentivados (art. 311)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '000004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='00', NOME_REGRA='Regime automotivo - projetos incentivados (art. 312)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '000004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('000004','00','Regime automotivo - projetos incentivados (art. 312)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '000005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='00', NOME_REGRA='Operação com EAC destinado à mistura com gasolina A, mas com saída do biocombustível com destinação diversa',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '000005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('000005','00','Operação com EAC destinado à mistura com gasolina A, mas com saída do biocombustível com destinação diversa',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '000006';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='00', NOME_REGRA='Situações tributadas integralmente pelo IBS e CBS realizadas por autônomo',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '000006';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('000006','00','Situações tributadas integralmente pelo IBS e CBS realizadas por autônomo',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '010001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='10', NOME_REGRA='Operações do FGTS não realizadas pela Caixa Econômica Federal',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '010001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('010001','10','Operações do FGTS não realizadas pela Caixa Econômica Federal',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '010002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='10', NOME_REGRA='Operações do serviço financeiro',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '010002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('010002','10','Operações do serviço financeiro',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '011001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='11', NOME_REGRA='Planos de assistência funerária.',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '011001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('011001','11','Planos de assistência funerária.',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '011002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='11', NOME_REGRA='Planos de assistência à saúde',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '011002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('011002','11','Planos de assistência à saúde',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '011003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='11', NOME_REGRA='Intermediação de planos de assistência à saúde',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '011003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('011003','11','Intermediação de planos de assistência à saúde',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '011004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='11', NOME_REGRA='Concursos e prognósticos',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '011004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('011004','11','Concursos e prognósticos',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '011005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='11', NOME_REGRA='Planos de assistência à saúde de animais domésticos',
+    PRED_IBS=30, PRED_CBS=30
+    WHERE CCLASS_TRIB = '011005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('011005','11','Planos de assistência à saúde de animais domésticos',30,30);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Serviços de transporte de bens até as zonas de processamento de exportação e bens exportados a partir das zonas de processamento de exportação',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200001','200','Serviços de transporte de bens até as zonas de processamento de exportação e bens exportados a partir das zonas de processamento de exportação',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento ou importação para produtor rural não contribuinte ou TAC',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200002','200','Fornecimento ou importação para produtor rural não contribuinte ou TAC',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Vendas de produtos destinados à alimentação humana (Anexo I)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200003','200','Vendas de produtos destinados à alimentação humana (Anexo I)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de dispositivos médicos (Anexo XII)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200004','200','Fornecimento de dispositivos médicos (Anexo XII)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de dispositivos médicos para órgãos da administração pública e entidades de saúde imunes (Anexo IV)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200005','200','Fornecimento de dispositivos médicos para órgãos da administração pública e entidades de saúde imunes (Anexo IV)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200006';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Situação de emergência de saúde pública reconhecida pelo Poder público',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200006';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200006','200','Situação de emergência de saúde pública reconhecida pelo Poder público',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200007';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos dispositivos de acessibilidade próprios para pessoas com deficiência (Anexo XIII)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200007';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200007','200','Fornecimento dos dispositivos de acessibilidade próprios para pessoas com deficiência (Anexo XIII)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200008';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos dispositivos de acessibilidade próprios para pessoas com deficiência adquiridos por órgãos da administração pública (Anexo V)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200008';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200008','200','Fornecimento dos dispositivos de acessibilidade próprios para pessoas com deficiência adquiridos por órgãos da administração pública (Anexo V)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200009';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos medicamentos registrados na Anvisa',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200009';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200009','200','Fornecimento dos medicamentos registrados na Anvisa',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200010';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos medicamentos registrados na Anvisa, adquiridos por órgãos da administração pública',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200010';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200010','200','Fornecimento dos medicamentos registrados na Anvisa, adquiridos por órgãos da administração pública',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200011';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento das composições para nutrição enteral e parenteral quando adquiridas por órgãos da administração pública (Anexo VI)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200011';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200011','200','Fornecimento das composições para nutrição enteral e parenteral quando adquiridas por órgãos da administração pública (Anexo VI)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200012';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Situação de emergência de saúde pública reconhecida pelo Poder público',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200012';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200012','200','Situação de emergência de saúde pública reconhecida pelo Poder público',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200013';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de tampões higiênicos, absorventes higiênicos internos ou externos',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200013';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200013','200','Fornecimento de tampões higiênicos, absorventes higiênicos internos ou externos',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200014';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos produtos hortícolas, frutas e ovos (Anexo XV)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200014';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200014','200','Fornecimento dos produtos hortícolas, frutas e ovos (Anexo XV)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200015';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Venda de automóveis de passageiros de fabricação nacional adquiridos por motoristas profissionais ou pessoas com deficiência',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200015';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200015','200','Venda de automóveis de passageiros de fabricação nacional adquiridos por motoristas profissionais ou pessoas com deficiência',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200016';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Prestação de serviços de pesquisa e desenvolvimento por Instituição Científica, Tecnológica e de Inovação (ICT)',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200016';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200016','200','Prestação de serviços de pesquisa e desenvolvimento por Instituição Científica, Tecnológica e de Inovação (ICT)',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200017';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operações relacionadas ao FGTS',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200017';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200017','200','Operações relacionadas ao FGTS',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200018';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operações de resseguro e retrocessão',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200018';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200018','200','Operações de resseguro e retrocessão',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200019';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Importador dos serviços financeiros contribuinte',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200019';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200019','200','Importador dos serviços financeiros contribuinte',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200020';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operação praticada por sociedades cooperativas optantes por regime específico do IBS e CBS',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200020';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200020','200','Operação praticada por sociedades cooperativas optantes por regime específico do IBS e CBS',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200021';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Serviços de transporte público coletivo de passageiros ferroviário e hidroviário',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200021';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200021','200','Serviços de transporte público coletivo de passageiros ferroviário e hidroviário',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200022';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operação originada fora da ZFM que destine bem material industrializado a contribuinte estabelecido na ZFM',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200022';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200022','200','Operação originada fora da ZFM que destine bem material industrializado a contribuinte estabelecido na ZFM',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200023';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operação realizada por indústria incentivada que destine bem material intermediário para outra indústria incentivada na ZFM',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200023';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200023','200','Operação realizada por indústria incentivada que destine bem material intermediário para outra indústria incentivada na ZFM',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200024';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operação originada fora das Áreas de Livre Comércio destinadas a contribuinte estabelecido nas Áreas de Livre Comércio',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200024';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200024','200','Operação originada fora das Áreas de Livre Comércio destinadas a contribuinte estabelecido nas Áreas de Livre Comércio',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200025';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos serviços de educação relacionados ao Programa Universidade para Todos (Prouni)',
+    PRED_IBS=60, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200025';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200025','200','Fornecimento dos serviços de educação relacionados ao Programa Universidade para Todos (Prouni)',60,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200026';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Locação de imóveis localizados nas zonas reabilitadas',
+    PRED_IBS=80, PRED_CBS=80
+    WHERE CCLASS_TRIB = '200026';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200026','200','Locação de imóveis localizados nas zonas reabilitadas',80,80);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200027';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operações de locação, cessão onerosa e arrendamento de bens imóveis',
+    PRED_IBS=70, PRED_CBS=70
+    WHERE CCLASS_TRIB = '200027';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200027','200','Operações de locação, cessão onerosa e arrendamento de bens imóveis',70,70);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200028';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos serviços de educação (Anexo II)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200028';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200028','200','Fornecimento dos serviços de educação (Anexo II)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200029';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos serviços de saúde humana (Anexo III)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200029';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200029','200','Fornecimento dos serviços de saúde humana (Anexo III)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200030';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Venda dos dispositivos médicos (Anexo IV)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200030';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200030','200','Venda dos dispositivos médicos (Anexo IV)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200031';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos dispositivos de acessibilidade próprios para pessoas com deficiência (Anexo V)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200031';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200031','200','Fornecimento dos dispositivos de acessibilidade próprios para pessoas com deficiência (Anexo V)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200032';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos medicamentos registrados na Anvisa ou produzidos por farmácias de manipulação, ressalvados os medicamentos sujeitos à alíquota z',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200032';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200032','200','Fornecimento dos medicamentos registrados na Anvisa ou produzidos por farmácias de manipulação, ressalvados os medicamentos sujeitos à alíquota z',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200033';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento das composições para nutrição enteral e parenteral (Anexo VI)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200033';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200033','200','Fornecimento das composições para nutrição enteral e parenteral (Anexo VI)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200034';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos alimentos destinados ao consumo humano (Anexo VII)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200034';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200034','200','Fornecimento dos alimentos destinados ao consumo humano (Anexo VII)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200035';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos produtos de higiene pessoal e limpeza (Anexo VIII)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200035';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200035','200','Fornecimento dos produtos de higiene pessoal e limpeza (Anexo VIII)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200036';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de produtos agropecuários, aquícolas, pesqueiros, florestais e extrativistas vegetais in natura',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200036';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200036','200','Fornecimento de produtos agropecuários, aquícolas, pesqueiros, florestais e extrativistas vegetais in natura',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200037';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de serviços ambientais de conservação ou recuperação da vegetação nativa',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200037';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200037','200','Fornecimento de serviços ambientais de conservação ou recuperação da vegetação nativa',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200038';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos insumos agropecuários e aquícolas (Anexo IX)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200038';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200038','200','Fornecimento dos insumos agropecuários e aquícolas (Anexo IX)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200039';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos bens e serviços relacionados com produções nacionais artísticas, culturais, de eventos, jornalísticas e audiovisuais (Anexo X)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200039';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200039','200','Fornecimento dos bens e serviços relacionados com produções nacionais artísticas, culturais, de eventos, jornalísticas e audiovisuais (Anexo X)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200040';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de serviços de comunicação institucional à administração pública',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200040';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200040','200','Fornecimento de serviços de comunicação institucional à administração pública',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200041';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de serviço de educação desportiva (art. 141. I)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200041';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200041','200','Fornecimento de serviço de educação desportiva (art. 141. I)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200042';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de serviço de gestão e exploração do desporto (art. 141. II)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200042';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200042','200','Fornecimento de serviço de gestão e exploração do desporto (art. 141. II)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200043';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento à administração pública dos serviços e dos bens relativos à soberania (Anexo XI)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200043';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200043','200','Fornecimento à administração pública dos serviços e dos bens relativos à soberania (Anexo XI)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200044';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operações e prestações de serviços de segurança da informação e segurança cibernética desenvolvidos por sociedade que tenha sócio brasileir',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200044';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200044','200','Operações e prestações de serviços de segurança da informação e segurança cibernética desenvolvidos por sociedade que tenha sócio brasileir',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200045';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operações relacionadas a projetos de reabilitação urbana de zonas históricas e de áreas críticas de recuperação e reconversão urbanística',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200045';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200045','200','Operações relacionadas a projetos de reabilitação urbana de zonas históricas e de áreas críticas de recuperação e reconversão urbanística',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200046';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Operações com bens imóveis',
+    PRED_IBS=50, PRED_CBS=50
+    WHERE CCLASS_TRIB = '200046';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200046','200','Operações com bens imóveis',50,50);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200047';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Bares e Restaurantes',
+    PRED_IBS=40, PRED_CBS=40
+    WHERE CCLASS_TRIB = '200047';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200047','200','Bares e Restaurantes',40,40);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200048';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Hotelaria, Parques de Diversão e Parques Temáticos',
+    PRED_IBS=40, PRED_CBS=40
+    WHERE CCLASS_TRIB = '200048';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200048','200','Hotelaria, Parques de Diversão e Parques Temáticos',40,40);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200049';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Transporte coletivo de passageiros rodoviário, ferroviário e hidroviário',
+    PRED_IBS=40, PRED_CBS=40
+    WHERE CCLASS_TRIB = '200049';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200049','200','Transporte coletivo de passageiros rodoviário, ferroviário e hidroviário',40,40);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200050';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Serviços de transporte aéreo regional coletivo de passageiros ou de carga',
+    PRED_IBS=40, PRED_CBS=40
+    WHERE CCLASS_TRIB = '200050';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200050','200','Serviços de transporte aéreo regional coletivo de passageiros ou de carga',40,40);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200051';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Agências de Turismo',
+    PRED_IBS=40, PRED_CBS=40
+    WHERE CCLASS_TRIB = '200051';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200051','200','Agências de Turismo',40,40);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200052';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Prestação de serviços de profissões intelectuais',
+    PRED_IBS=30, PRED_CBS=30
+    WHERE CCLASS_TRIB = '200052';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200052','200','Prestação de serviços de profissões intelectuais',30,30);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200053';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de medicamentos registrados na Anvisa, quando classificados como soros ou vacinas',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200053';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200053','200','Fornecimento de medicamentos registrados na Anvisa, quando classificados como soros ou vacinas',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200054';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento de bem material pela cooperativa de produção agropecuária a associado não sujeito ao regime regular do IBS e da CBS',
+    PRED_IBS=100, PRED_CBS=100
+    WHERE CCLASS_TRIB = '200054';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200054','200','Fornecimento de bem material pela cooperativa de produção agropecuária a associado não sujeito ao regime regular do IBS e da CBS',100,100);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200055';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos serviços com redução de alíquota de 60% realizado por autônomo',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '200055';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200055','200','Fornecimento dos serviços com redução de alíquota de 60% realizado por autônomo',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '200056';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='200', NOME_REGRA='Fornecimento dos serviços com redução de alíquota de 30% realizado por autônomo',
+    PRED_IBS=30, PRED_CBS=30
+    WHERE CCLASS_TRIB = '200056';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('200056','200','Fornecimento dos serviços com redução de alíquota de 30% realizado por autônomo',30,30);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '220001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='220', NOME_REGRA='Incorporação imobiliária submetida ao regime especial de tributação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '220001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('220001','220','Incorporação imobiliária submetida ao regime especial de tributação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '220002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='220', NOME_REGRA='Incorporação imobiliária submetida ao regime especial de tributação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '220002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('220002','220','Incorporação imobiliária submetida ao regime especial de tributação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '220003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='220', NOME_REGRA='Alienação de imóvel decorrente de parcelamento do solo',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '220003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('220003','220','Alienação de imóvel decorrente de parcelamento do solo',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '221001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='221', NOME_REGRA='Locação, cessão onerosa ou arrendamento de bem imóvel com alíquota sobre a receita bruta',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '221001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('221001','221','Locação, cessão onerosa ou arrendamento de bem imóvel com alíquota sobre a receita bruta',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '221002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='221', NOME_REGRA='Incorporação imobiliária submetida ao regime especial de tributação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '221002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('221002','221','Incorporação imobiliária submetida ao regime especial de tributação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '221003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='221', NOME_REGRA='Incorporação imobiliária submetida ao regime especial de tributação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '221003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('221003','221','Incorporação imobiliária submetida ao regime especial de tributação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '221004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='221', NOME_REGRA='Alienação de imóvel decorrente de parcelamento do solo',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '221004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('221004','221','Alienação de imóvel decorrente de parcelamento do solo',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '222001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='222', NOME_REGRA='Transporte internacional de passageiros, caso os trechos de ida e volta sejam vendidos em conjunto',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '222001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('222001','222','Transporte internacional de passageiros, caso os trechos de ida e volta sejam vendidos em conjunto',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '400001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='400', NOME_REGRA='Fornecimento de serviços de transporte público coletivo de passageiros rodoviário e metroviário',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '400001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('400001','400','Fornecimento de serviços de transporte público coletivo de passageiros rodoviário e metroviário',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '400002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='400', NOME_REGRA='Fornecimento de serviços de transporte público coletivo de passageiros rodoviário e metroviário com medição por quilômetro rodado',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '400002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('400002','400','Fornecimento de serviços de transporte público coletivo de passageiros rodoviário e metroviário com medição por quilômetro rodado',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '400003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='400', NOME_REGRA='Bagagens',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '400003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('400003','400','Bagagens',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '400004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='400', NOME_REGRA='Remessas internacionais',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '400004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('400004','400','Remessas internacionais',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento de bonificações quando constem no documento fiscal e que não dependam de evento posterior',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410001','410','Fornecimento de bonificações quando constem no documento fiscal e que não dependam de evento posterior',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Transferências entre estabelecimentos pertencentes ao mesmo contribuinte',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410002','410','Transferências entre estabelecimentos pertencentes ao mesmo contribuinte',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Doações sem contraprestação em benefício do doador',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410003','410','Doações sem contraprestação em benefício do doador',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Exportações de bens e serviços',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410004','410','Exportações de bens e serviços',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos realizados pela União, pelos Estados, pelo Distrito Federal e pelos Municípios',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410005','410','Fornecimentos realizados pela União, pelos Estados, pelo Distrito Federal e pelos Municípios',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410006';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos realizados por entidades religiosas e templos de qualquer culto',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410006';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410006','410','Fornecimentos realizados por entidades religiosas e templos de qualquer culto',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410007';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos realizados por partidos políticos, entidades sindicais e instituições de educação e de assistência social',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410007';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410007','410','Fornecimentos realizados por partidos políticos, entidades sindicais e instituições de educação e de assistência social',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410008';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos de livros, jornais, periódicos e do papel destinado a sua impressão',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410008';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410008','410','Fornecimentos de livros, jornais, periódicos e do papel destinado a sua impressão',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410009';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos de fonogramas e videofonogramas musicais produzidos no Brasil',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410009';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410009','410','Fornecimentos de fonogramas e videofonogramas musicais produzidos no Brasil',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410010';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos de serviço de comunicação nas modalidades de radiodifusão sonora e de sons e imagens de recepção livre e gratuita',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410010';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410010','410','Fornecimentos de serviço de comunicação nas modalidades de radiodifusão sonora e de sons e imagens de recepção livre e gratuita',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410011';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimentos de ouro, quando definido em lei como ativo financeiro ou instrumento cambial',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410011';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410011','410','Fornecimentos de ouro, quando definido em lei como ativo financeiro ou instrumento cambial',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410012';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento de condomínio edilício não optante pelo regime regular',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410012';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410012','410','Fornecimento de condomínio edilício não optante pelo regime regular',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410013';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Exportações de combustíveis',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410013';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410013','410','Exportações de combustíveis',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410014';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento de produtor rural não contribuinte',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410014';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410014','410','Fornecimento de produtor rural não contribuinte',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410015';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento por transportador autônomo não contribuinte',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410015';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410015','410','Fornecimento por transportador autônomo não contribuinte',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410016';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento ou aquisição de resíduos sólidos',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410016';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410016','410','Fornecimento ou aquisição de resíduos sólidos',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410017';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Aquisição de bem móvel com crédito presumido sob condição de revenda realizada',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410017';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410017','410','Aquisição de bem móvel com crédito presumido sob condição de revenda realizada',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410018';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Operações relacionadas aos fundos garantidores e executores de políticas públicas',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410018';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410018','410','Operações relacionadas aos fundos garantidores e executores de políticas públicas',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410019';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Exclusão da gorjeta na base de cálculo no fornecimento de alimentação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410019';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410019','410','Exclusão da gorjeta na base de cálculo no fornecimento de alimentação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410020';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Exclusão do valor de intermediação na base de cálculo no fornecimento de alimentação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410020';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410020','410','Exclusão do valor de intermediação na base de cálculo no fornecimento de alimentação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410021';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Contribuição de que trata o art. 149-A da Constituição Federal',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410021';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410021','410','Contribuição de que trata o art. 149-A da Constituição Federal',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410022';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Consolidação da propriedade do bem pelo credor',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410022';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410022','410','Consolidação da propriedade do bem pelo credor',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410023';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Alienação de bens móveis ou imóveis que tenham sido objeto de garantia em que o prestador da garantia não seja contribuinte',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410023';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410023','410','Alienação de bens móveis ou imóveis que tenham sido objeto de garantia em que o prestador da garantia não seja contribuinte',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410024';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Consolidação da propriedade do bem pelo grupo de consórcio',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410024';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410024','410','Consolidação da propriedade do bem pelo grupo de consórcio',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410025';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Alienação de bem que tenha sido objeto de garantia em que o prestador da garantia não seja contribuinte',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410025';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410025','410','Alienação de bem que tenha sido objeto de garantia em que o prestador da garantia não seja contribuinte',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410026';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Doação com anulação de crédito',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410026';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410026','410','Doação com anulação de crédito',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410027';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Exportação de serviço ou de bem imaterial',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410027';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410027','410','Exportação de serviço ou de bem imaterial',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410028';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Operações com bens imóveis realizadas por pessoas físicas não consideradas contribuintes',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410028';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410028','410','Operações com bens imóveis realizadas por pessoas físicas não consideradas contribuintes',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410029';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Operações acobertadas somente pelo ICMS',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410029';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410029','410','Operações acobertadas somente pelo ICMS',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410030';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Estorno de crédito por perecimento, deteriorização, roubo, furto ou extravio.',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410030';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410030','410','Estorno de crédito por perecimento, deteriorização, roubo, furto ou extravio.',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410031';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento em período anterior ao início de vigência de incidências de CBS e IBS',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410031';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410031','410','Fornecimento em período anterior ao início de vigência de incidências de CBS e IBS',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410032';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Tributos incidentes na operação que não integram a base de cálculo do IBS e da CBS',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410032';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410032','410','Tributos incidentes na operação que não integram a base de cálculo do IBS e da CBS',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410033';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Operações de Fundos de Investimento Imobiliário (FII) e Fundos de Investimento nas Cadeias Produtivas do Agronegócio (Fiagro)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410033';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410033','410','Operações de Fundos de Investimento Imobiliário (FII) e Fundos de Investimento nas Cadeias Produtivas do Agronegócio (Fiagro)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410034';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Operações de fundos de investimento',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410034';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410034','410','Operações de fundos de investimento',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410035';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Fornecimento realizado por nanoempreendedor',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410035';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410035','410','Fornecimento realizado por nanoempreendedor',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410036';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Descontos financeiros em nota fatura',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410036';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410036','410','Descontos financeiros em nota fatura',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410037';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Importação os bens materiais sem incidência de IBS e CBS',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410037';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410037','410','Importação os bens materiais sem incidência de IBS e CBS',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '410999';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='410', NOME_REGRA='Operações não onerosas sem previsão de tributação, não especificadas anteriormente',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '410999';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('410999','410','Operações não onerosas sem previsão de tributação, não especificadas anteriormente',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '510001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='510', NOME_REGRA='Operações, sujeitas a diferimento, com energia elétrica, relativas à importação, geração, comercialização, distribuição e transmissão',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '510001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('510001','510','Operações, sujeitas a diferimento, com energia elétrica, relativas à importação, geração, comercialização, distribuição e transmissão',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '515001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='515', NOME_REGRA='Operações, sujeitas a diferimento, com insumos agropecuários e aquícolas (Anexo IX)',
+    PRED_IBS=60, PRED_CBS=60
+    WHERE CCLASS_TRIB = '515001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('515001','515','Operações, sujeitas a diferimento, com insumos agropecuários e aquícolas (Anexo IX)',60,60);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Exportações de bens materiais',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550001','550','Exportações de bens materiais',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime de Trânsito',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550002','550','Regime de Trânsito',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Depósito (art. 85)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550003','550','Regimes de Depósito (art. 85)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Depósito (art. 87)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550004','550','Regimes de Depósito (art. 87)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Depósito (art. 87, Parágrafo único)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550005','550','Regimes de Depósito (art. 87, Parágrafo único)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550006';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Permanência Temporária com suspensão total',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550006';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550006','550','Regimes de Permanência Temporária com suspensão total',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550007';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Aperfeiçoamento (Recof)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550007';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550007','550','Regimes de Aperfeiçoamento (Recof)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550008';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Importação de bens para o Regime de Repetro-Temporário',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550008';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550008','550','Importação de bens para o Regime de Repetro-Temporário',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550009';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='GNL-Temporário',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550009';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550009','550','GNL-Temporário',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550010';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Repetro-Permanente',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550010';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550010','550','Repetro-Permanente',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550011';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Repetro-Industrialização',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550011';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550011','550','Repetro-Industrialização',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550012';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Repetro-Nacional',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550012';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550012','550','Repetro-Nacional',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550013';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Repetro-Entreposto',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550013';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550013','550','Repetro-Entreposto',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550014';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Zona de Processamento de Exportação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550014';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550014','550','Zona de Processamento de Exportação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550015';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime Tributário para Incentivo à Modernização e à Ampliação da Estrutura Portuária',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550015';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550015','550','Regime Tributário para Incentivo à Modernização e à Ampliação da Estrutura Portuária',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550016';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime Especial de Incentivos para o Desenvolvimento da Infraestrutura',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550016';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550016','550','Regime Especial de Incentivos para o Desenvolvimento da Infraestrutura',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550017';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime Tributário para Incentivo à Atividade Naval - Renaval (Art. 107, I)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550017';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550017','550','Regime Tributário para Incentivo à Atividade Naval - Renaval (Art. 107, I)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550018';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Desoneração da aquisição de bens de capital',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550018';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550018','550','Desoneração da aquisição de bens de capital',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550019';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Importação de bem material por indústria incentivada para utilização na ZFM',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550019';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550019','550','Importação de bem material por indústria incentivada para utilização na ZFM',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550020';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Áreas de livre comércio',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550020';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550020','550','Áreas de livre comércio',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550021';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Industrialização destinada a exportações',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550021';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550021','550','Industrialização destinada a exportações',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550022';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime Especial de Incentivos para a Produção de Hidrogênio de Baixa Emissão de Carbono (Rehidro)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550022';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550022','550','Regime Especial de Incentivos para a Produção de Hidrogênio de Baixa Emissão de Carbono (Rehidro)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550023';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Operações com hidrocarbonetos líquidos derivados de petróleo não combustíveis ou de gás natural, inclusive nafta',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550023';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550023','550','Operações com hidrocarbonetos líquidos derivados de petróleo não combustíveis ou de gás natural, inclusive nafta',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550024';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime Tributário para Incentivo à Atividade Naval - Renaval (Art. 107, II)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550024';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550024','550','Regime Tributário para Incentivo à Atividade Naval - Renaval (Art. 107, II)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550025';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regime Tributário para Incentivo à Atividade Naval - Renaval (Art. 107, III)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550025';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550025','550','Regime Tributário para Incentivo à Atividade Naval - Renaval (Art. 107, III)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550026';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de admissão temporária com suspensão total do pagamento dos tributos (ZFM)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550026';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550026','550','Regimes de admissão temporária com suspensão total do pagamento dos tributos (ZFM)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550027';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Aperfeiçoamento (Drawback)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550027';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550027','550','Regimes de Aperfeiçoamento (Drawback)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550028';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Regimes de Aperfeiçoamento (Admissão temporária)',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550028';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550028','550','Regimes de Aperfeiçoamento (Admissão temporária)',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '550029';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='550', NOME_REGRA='Zona de Processamento de Exportação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '550029';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('550029','550','Zona de Processamento de Exportação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Tributação monofásica sobre combustíveis',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620001','620','Tributação monofásica sobre combustíveis',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Tributação monofásica com responsabilidade pela retenção sobre combustíveis',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620002','620','Tributação monofásica com responsabilidade pela retenção sobre combustíveis',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Tributação monofásica com responsabilidade de retenção de tributos por terceiros',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620003','620','Tributação monofásica com responsabilidade de retenção de tributos por terceiros',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Tributação monofásica sobre mistura de EAC com gasolina A em percentual superior ao obrigatório',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620004','620','Tributação monofásica sobre mistura de EAC com gasolina A em percentual superior ao obrigatório',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Tributação monofásica sobre mistura de EAC com gasolina A em percentual inferior ao obrigatório',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620005','620','Tributação monofásica sobre mistura de EAC com gasolina A em percentual inferior ao obrigatório',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620006';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Tributação monofásica sobre combustíveis cobrada anteriormente',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620006';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620006','620','Tributação monofásica sobre combustíveis cobrada anteriormente',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '620007';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='620', NOME_REGRA='Perecimento, deteriorização, roubo, furto ou extravio no regime monofásico',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '620007';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('620007','620','Perecimento, deteriorização, roubo, furto ou extravio no regime monofásico',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '800001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='800', NOME_REGRA='Fusão, cisão ou incorporação',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '800001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('800001','800','Fusão, cisão ou incorporação',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '800002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='800', NOME_REGRA='Transferência de crédito do associado, inclusive as cooperativas singulares',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '800002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('800002','800','Transferência de crédito do associado, inclusive as cooperativas singulares',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '810001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='810', NOME_REGRA='Crédito presumido de IBS sobre o valor apurado nos fornecimentos a partir da ZFM',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '810001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('810001','810','Crédito presumido de IBS sobre o valor apurado nos fornecimentos a partir da ZFM',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '811001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='811', NOME_REGRA='Anulação de Crédito por Saídas Imunes/Isentas',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '811001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('811001','811','Anulação de Crédito por Saídas Imunes/Isentas',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '811002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='811', NOME_REGRA='Débitos de notas fiscais não processadas na apuração',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '811002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('811002','811','Débitos de notas fiscais não processadas na apuração',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '811003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='811', NOME_REGRA='Desenquadramento do Simples Nacional',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '811003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('811003','811','Desenquadramento do Simples Nacional',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de fornecimento de serviços de planos de assistência à saúde elencados no art. 234 da Lei Complementar nº214, de 2025',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820001','820','Documento com informações de fornecimento de serviços de planos de assistência à saúde elencados no art. 234 da Lei Complementar nº214, de 2025',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820002';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de fornecimento de serviços de planos de assistência funerária',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820002';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820002','820','Documento com informações de fornecimento de serviços de planos de assistência funerária',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820003';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de fornecimento de serviços de planos de assistência à saúde de animais domésticos',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820003';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820003','820','Documento com informações de fornecimento de serviços de planos de assistência à saúde de animais domésticos',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820004';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de prestação de serviços de consursos de prognósticos',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820004';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820004','820','Documento com informações de prestação de serviços de consursos de prognósticos',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820005';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de alienação de bens imóveis',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820005';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820005','820','Documento com informações de alienação de bens imóveis',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820006';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de fornecimento de serviços de exploração de via',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820006';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820006','820','Documento com informações de fornecimento de serviços de exploração de via',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820007';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de fornecimento de serviços financeiros',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820007';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820007','820','Documento com informações de fornecimento de serviços financeiros',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820008';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Documento com informações de fornecimento de serviço continuado, mas com tributação realizada em fatura anterior',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820008';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820008','820','Documento com informações de fornecimento de serviço continuado, mas com tributação realizada em fatura anterior',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '820009';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='820', NOME_REGRA='Fornecimentos declarados e tributados em outro documento',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '820009';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('820009','820','Fornecimentos declarados e tributados em outro documento',0,0);
+  END IF;
+END;
+$
+DECLARE v_q NUMBER; BEGIN
+  SELECT COUNT(*) INTO v_q FROM CLASSE_PROD WHERE CCLASS_TRIB = '830001';
+  IF v_q > 0 THEN
+    UPDATE CLASSE_PROD SET CST_IBSCBS='830', NOME_REGRA='Documento com exclusão da BC da CBS e do IBS de energia elétrica fornecida pela distribuidora à UC',
+    PRED_IBS=0, PRED_CBS=0
+    WHERE CCLASS_TRIB = '830001';
+  ELSE
+    INSERT INTO CLASSE_PROD (CCLASS_TRIB,CST_IBSCBS,NOME_REGRA,PRED_IBS,PRED_CBS)
+    VALUES ('830001','830','Documento com exclusão da BC da CBS e do IBS de energia elétrica fornecida pela distribuidora à UC',0,0);
+  END IF;
+END;
+$
