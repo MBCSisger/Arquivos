@@ -1,0 +1,25 @@
+CREATE OR REPLACE TRIGGER NFECTL_T1 
+BEFORE insert on "NFECTL"
+for each row
+begin
+   -- SÓ EXECUTA A GERAÇÃO DE SEQUÊNCIA SE FOR UMA NOTA PRÓPRIA (EMISSÃO DO SISTEMA)
+   IF :NEW.TP = 'P' THEN
+       IF :NEW.MODELO ='55' THEN
+          IF :NEW.SERIE = 1 THEN
+             select "NFECTL_MD55_SR1".nextval into :NEW.NR_NFE from dual;
+          END IF;
+       END IF;   
+       
+       IF :NEW.MODELO ='65' THEN
+          IF :NEW.SERIE = 1 THEN
+             select "NFECTL_MD65_SR1".nextval into :NEW.NR_NFE from dual;
+          ELSIF  :NEW.SERIE = 2 THEN
+              select "NFECTL_MD65_SR2".nextval into :NEW.NR_NFE from dual;
+          ELSIF  :NEW.SERIE = 3 THEN
+              select "NFECTL_MD65_SR3".nextval into :NEW.NR_NFE from dual;
+          END IF;
+       END IF;
+   END IF;
+   -- SE FOR ENTRADA (TP = 'T'), NÃO FAZ NADA. MANTÉM O NÚMERO PASSADO PELO DELPHI.
+end;
+$

@@ -1,0 +1,24 @@
+-- 1. Desabilita a FK para permitir Notas de Despesa/Consumo e Contas Avulsas sem NFECTL
+ALTER TABLE NFEDUP DISABLE CONSTRAINT NFEDUP_CON
+$
+
+-- 2. Adiciona as colunas do Contas a Pagar / Receber (100% compatível com o sistema atual)
+ALTER TABLE NFEDUP ADD (
+    "TIPO"        VARCHAR2(1 BYTE) DEFAULT 'R',
+    "COD_CLI_FOR" NUMBER(7,0)      DEFAULT 0,
+    "NR_DOC"      NUMBER(9,0)      DEFAULT 0,
+    "DT_EMISSAO"  DATE             DEFAULT SYSDATE,
+    "STATUS_FIN"  VARCHAR2(1 BYTE) DEFAULT 'A',
+    "DT_BAIXA"    DATE,
+    "VPAGO"       NUMBER(15,2)     DEFAULT 0,
+    "VJUROS"      NUMBER(13,2)     DEFAULT 0,
+    "VDESC_BAIXA" NUMBER(13,2)     DEFAULT 0,
+    "ORIGEM"      VARCHAR2(1 BYTE) DEFAULT 'N',
+    "HISTORICO"   VARCHAR2(100 BYTE)
+)
+$
+
+
+-- 3. Cria índice para deixar a futura tela de Contas a Pagar/Receber ultra rápida por Vencimento e Status
+CREATE INDEX NFEDUP_IDX_FIN ON NFEDUP ("TIPO", "STATUS_FIN", "DVENC")
+$
